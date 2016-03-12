@@ -2,6 +2,8 @@
 
 Simple test project which creates a broken and unrecoverable Neo4j database.
 
+GitHub Issue: https://github.com/neo4j/neo4j/issues/6685
+
 ## Usage
 
 Set the Neo4j version to be tested in `pom.xml` and run 
