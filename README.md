@@ -4,7 +4,9 @@ Simple test project which creates a broken and unrecoverable Neo4j database.
 
 ## Usage
 
-Set the Neo4j version to be tested in pom.xml and run `mvn clean install exec:java -Dexec.mainClass="org.structr.test.lucene.npe.Main"`
+Set the Neo4j version to be tested in pom.xml and run 
+
+    mvn clean install exec:java -Dexec.mainClass="org.structr.test.lucene.npe.Main"
 
 ## Result
 
