@@ -12,6 +12,8 @@ public class Main {
 
 	public static void main(final String[] args) {
 
+		try {
+		
 		GraphDatabaseService db = new GraphDatabaseFactory().newEmbeddedDatabase(new File("/tmp/graph.db." + new Date().getTime()));
 
 		Transaction tx = db.beginTx();
@@ -20,6 +22,26 @@ public class Main {
 
 		tx.success();
 		tx.close();
+		
+		db.shutdown();
+		
+		System.out.println("----------------------------------------------------------------------------------------------------------------");
+		System.out.println("The Neo4j version is NOT affected by the issue described in https://github.com/neo4j/neo4j/issues/6685.");
+		System.out.println("----------------------------------------------------------------------------------------------------------------");
+
+		System.exit(0);
+		
+		} catch (Throwable t) {
+		
+			t.printStackTrace();
+			
+			System.out.println("----------------------------------------------------------------------------------------------------------------");
+			System.out.println("ERROR: The Neo4j version seems to be affected by the issue described in https://github.com/neo4j/neo4j/issues/6685.");
+			System.out.println("----------------------------------------------------------------------------------------------------------------");
+	
+			System.exit(1);
+			
+		}
 
 	}
 
